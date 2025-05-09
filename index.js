@@ -87,7 +87,7 @@ function displayBook(book) {
     // add book content
     divBook.dataset.id = book.id;
     pTitle.textContent = book.title;
-    pAuthor.textContent = "By " + book.author;
+    pAuthor.textContent = "by " + book.author;
     pPages.textContent = "Pages: " + book.pages;
     pReadStatus.textContent = "Status: " + book.status;
 
@@ -174,14 +174,14 @@ formAddBtn.addEventListener("click", (e) => {
 });
 
 // test books
-addBookToLibrary("Title 1", "Author 1", 150, "Unfinished", myLibrary);
-addBookToLibrary("Title 2", "Author 2", 360, "Unfinished", myLibrary);
-addBookToLibrary("Title 3", "Author 3", 120, "Finished", myLibrary);
-addBookToLibrary("Title 4", "Author 4", 60, "Finished", myLibrary);
-addBookToLibrary("Title 5", "Author 5", 1000, "Unfinished", myLibrary);
-addBookToLibrary("Title 6", "Author 6", 230, "Finished", myLibrary);
-addBookToLibrary("Title 7", "Author 7", 520, "Unfinished", myLibrary);
-addBookToLibrary("Title 8", "Author 8", 15, "Unfinished", myLibrary);
-addBookToLibrary("Title 9", "Author 9", 501, "Finished", myLibrary);
+addBookToLibrary("The Hunger Games", "Suzanne Collins", 374, "Unfinished", myLibrary);
+addBookToLibrary("Harry Potter and the Order of the Phoenix", " J.K. Rowling", 912, "Unfinished", myLibrary);
+addBookToLibrary("Pride and Prejudice", "Jane Austen", 279, "Finished", myLibrary);
+addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 323, "Finished", myLibrary);
+addBookToLibrary("The Book Thief", "Markus Zusak", 592, "Unfinished", myLibrary);
+addBookToLibrary("Twilight", "Stephenie Meyer", 498, "Finished", myLibrary);
+addBookToLibrary("Animal Farm", "George Orwell", 141, "Unfinished", myLibrary);
+addBookToLibrary("The Hobbit and The Lord of the Rings", "J.R.R. Tolkien", 1728, "Unfinished", myLibrary);
+addBookToLibrary("The Chronicles of Narnia", "C.S. Lewis", 767, "Finished", myLibrary);
 
 displayLibrary(myLibrary);
