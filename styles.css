@@ -12,9 +12,12 @@
 }
 
 body {
+    min-height: 100vh;
     background-color: beige;
     padding: 20px max(50px, 10vw);
 }
+
+/* Library */
 
 #library-container {
     display: grid;
@@ -28,7 +31,7 @@ body {
 .book {
     background-color: var(--dark-brown);
     color: white;
-    padding: 15px;
+    padding: 15px 10px;
     box-shadow: 8px 5px 10px rgba(30, 30, 30, 0.4);
     border-radius: 5px;
     border-right: 7px solid rgb(220, 220, 220);
@@ -45,10 +48,21 @@ body {
     text-align: center;
 }
 
-.title {
-    font-size: 1.3rem;
-    font-weight: bold;
+.author, .pages, .read-status {
+    font-size: 0.8rem;
 }
+
+.title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.book-top {
+    margin-bottom: 10px;
+}
+
+/* Add book button */
 
 .add-btn {
     background-color: transparent;
@@ -70,16 +84,23 @@ body {
     scale: 1.1;
 }
 
+/* Modal */
+
 dialog {
     border: none;
     background-color: aliceblue;
-    padding: 30px;
     border-radius: 5px;
+    padding: 0;
+    position: relative;
 }
 
 dialog::backdrop {
     background-color: black;
     opacity: 0.7;
+}
+
+.dialog-area {
+    padding: 30px;
 }
 
 dialog table {
@@ -116,4 +137,29 @@ input, select {
     border-radius: 5px;
     background-color: cornflowerblue;
     color: white;
+    cursor: pointer;
+}
+
+#form-add-btn:hover {
+    outline: 1px solid cornflowerblue;
+}
+
+.close-modal-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.close-modal-btn:hover {
+    scale: 1.1;
+}
+
+.close-modal-btn svg {
+    fill: gray;
+    width: 35px;
+    height: auto;
 }
