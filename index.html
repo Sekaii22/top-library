@@ -8,7 +8,50 @@
     <script src="index.js" defer></script>
 </head>
 <body>
-    <p>hello world!</p>
-    <button id="alert-btn">Click me!</button>
+    <dialog id="add-book-modal" open>
+        <form>
+            <label for="title-input">Title: </label>
+            <input type="text" id="title-input">
+            <label for="author-input">Author: </label>
+            <input type="text" id="author-input">
+            <label for="pages-input">Number of pages: </label>
+            <input type="number" id="pages-input" min="0">
+            <label for="read-status-input">Finished reading?: </label>
+            <input type="checkbox" id="read-status-input">
+        </form>
+    </dialog>
+
+    <section id="library-container">
+        <div class="book">
+            <div class="book-top">
+                <p class="title">Title 1</p>
+                <p class="author">By Author 1 aslkdjaklsdjaklsdjlk ajsdlajsld asss</p>
+            </div>
+            <div class="book-bottom">
+                <p class="pages">Pages: 100</p>
+                <p class="read-status">Status: Finished</p>
+            </div>
+        </div>
+        <div class="book">
+            <div class="book-top">
+                <p class="title">Title 2</p>
+                <p class="author">Author 2</p>
+            </div>
+            <div class="book-bottom">
+                <p class="pages">Pages: 100</p>
+                <p class="read-status">Status: Unread</p>
+            </div>
+        </div>
+        <div class="book">
+            <div class="book-top">
+                <p class="title">Title 3</p>
+                <p class="author">Author 3</p>
+            </div>
+            <div class="book-bottom">
+                <p class="pages">Pages: 100</p>
+                <p class="read-status">Status: Unfinished</p>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
