@@ -37,14 +37,14 @@ body {
 }
 
 .book {
-    background-color: var(--dark-brown);
+    /* background-color: var(--dark-brown); */
     color: white;
     padding: 15px 10px;
     box-shadow: 8px 5px 10px rgba(30, 30, 30, 0.4);
     border-radius: 5px;
-    border-right: 7px solid rgb(220, 220, 220);
-    border-bottom: 3px solid rgb(240, 240, 240);
-    border-left: 6px solid hsl(from var(--dark-brown) h s calc(l - 10));
+    border-right: 7px solid rgb(200, 200, 200);
+    border-bottom: 3px solid rgb(220, 220, 220);
+    /* border-left: 6px solid hsl(from var(--dark-brown) h s calc(l - 10)); */
     overflow: auto;
 
     display: flex;
