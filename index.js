@@ -71,6 +71,7 @@ function displayBook(book) {
         // remove from arr
         let index = myLibrary.indexOf(book);
         myLibrary.splice(index, 1);
+        console.log(myLibrary);
 
         // remove from display
         libraryContainer.removeChild(divBook);
@@ -117,8 +118,10 @@ formAddBtn.addEventListener("click", (e) => {
         let pages = pagesInput.value;
         let status = statusInput.value;
     
-        let book = addBookToLibrary(title, author, pages, status);
+        let book = addBookToLibrary(title, author, pages, status, myLibrary);
+        console.log(myLibrary);
         displayBook(book);
+
         form.reset();
         modal.close();
     }
