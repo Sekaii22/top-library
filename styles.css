@@ -31,7 +31,9 @@ body {
     grid-auto-rows: 300px;
     gap: 30px;
     padding: 20px;
-    background-color: var(--light-orange);
+    background-color: var(--light-brown);
+    border-radius: 5px;
+    box-shadow: 15px 10px 20px rgba(30, 30, 30, 0.4);
 }
 
 .book {
@@ -70,10 +72,10 @@ body {
     margin-bottom: 10px;
 }
 
-.delete-book-btn {
+.book-btn-group {
     position: absolute;
     bottom: 10px;
-    right: 10px;
+    right: 5px;
 }
 
 .delete-book-btn svg {
@@ -85,6 +87,20 @@ body {
 .delete-book-btn svg:hover {
     fill: red;
     scale: 1.1;
+}
+
+.toggle-status-btn svg {
+    width: 22px;
+    height: auto;
+    margin-right: 8px;
+}
+
+.toggle-status-btn svg:hover {
+    scale: 1.1;
+}
+
+.status-finished {
+    fill: rgb(50, 159, 50);
 }
 
 /* Add book button */
@@ -134,10 +150,6 @@ dialog caption {
     margin-bottom: 10px;
     font-size: 1.2rem;
 }
-
-/* th, td {
-    border: 1px solid black;
-} */
 
 dialog th{
     font-weight: normal;
