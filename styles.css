@@ -1,5 +1,4 @@
 :root {
-    --beige: #F5F5DC;
     --light-orange: #F2B279;
     --orange: #D96B43;
     --light-brown: #A66F5B;
@@ -13,15 +12,15 @@
 }
 
 body {
-    background-color: var(--beige);
-    padding: 20px 100px;
+    background-color: beige;
+    padding: 20px max(50px, 10vw);
 }
 
 #library-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-auto-rows: 300px;
-    gap: 20px;
+    gap: 30px;
     padding: 20px;
     background-color: var(--light-orange);
 }
@@ -51,16 +50,70 @@ body {
     font-weight: bold;
 }
 
-dialog {
-    border: none;
-}
-
-dialog::backdrop {
-    filter: blur(3px);
-    opacity: 0.8;
-}
-
 .add-btn {
     background-color: transparent;
     border: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.add-btn svg {
+    width: max(60px, 5vw);
+    height: auto;
+    fill: rgba(10, 10, 10, 0.7);
+}
+
+.add-btn svg:hover {
+    fill: rgba(30, 30, 30, 0.9);
+    scale: 1.1;
+}
+
+dialog {
+    border: none;
+    background-color: aliceblue;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+dialog::backdrop {
+    background-color: black;
+    opacity: 0.7;
+}
+
+dialog table {
+    border-spacing: 2rem;
+    border: 1px solid black;
+}
+
+dialog caption {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* th, td {
+    border: 1px solid black;
+} */
+
+dialog th{
+    font-weight: normal;
+    text-align: left;
+}
+
+label, input, select, button {
+    font-size: 1rem;
+}
+
+input, select {
+    padding: 5px 10px;
+    width: 100%;
+}
+
+#form-add-btn {
+    padding: 9px 45px;
+    border: none;
+    border-radius: 5px;
+    background-color: cornflowerblue;
+    color: white;
 }

@@ -17,6 +17,8 @@ function addBookToLibrary(author, title, pages, status, libraryArr) {
 }
 
 const libraryContainer = document.querySelector("#library-container");
+const addBtn = document.querySelector("#add-btn");
+const modal = document.querySelector("#add-book-modal");
 
 function displayLibrary(libraryArr) {
     // loop through library arr
@@ -56,6 +58,10 @@ function displayLibrary(libraryArr) {
         pHasRead.textContent = "Status: " + libraryArr[i].status;
     }
 }
+
+addBtn.addEventListener("click", () => {
+    modal.showModal();
+});
 
 addBookToLibrary("js1", "t1", 50, "Unread", mylibrary);
 addBookToLibrary("js2", "t2", 50, "Unread", mylibrary);
