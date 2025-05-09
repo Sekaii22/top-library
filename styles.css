@@ -1,6 +1,23 @@
+@font-face {
+    font-family: EB-Garamond;
+    src: url('assets/fonts/EBGaramond-Regular.woff2') format('woff2'),
+        url('assets/fonts/EBGaramond-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: EB-Garamond;
+    src: url('assets/fonts/EBGaramond-Bold.woff2') format('woff2'),
+        url('assets/fonts/EBGaramond-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 :root {
-    --light-orange: #F2B279;
-    --orange: #D96B43;
     --light-brown: #A66F5B;
     --dark-brown: #734343;
 }
@@ -8,6 +25,10 @@
 *:not(dialog) {
     margin: 0;
     padding: 0;
+    font-family: EB-Garamond, Verdana, serif;
+}
+
+* {
     box-sizing: border-box;
 }
 
@@ -20,31 +41,40 @@
 body {
     min-height: 100vh;
     background-color: beige;
-    padding: 20px max(50px, 10vw);
+    padding: 25px max(50px, 10vw);
+}
+
+.heading {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #111111;
 }
 
 /* Library */
 
 #library-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-auto-rows: 300px;
     gap: 30px;
+
     padding: 20px;
+    min-height: 200px;
     background-color: var(--light-brown);
+    border-left: 20px solid hsl(from var(--light-brown) h s calc(l - 10));
+    border-bottom: 10px solid hsl(from var(--light-brown) h s calc(l - 15));
     border-radius: 5px;
     box-shadow: 15px 10px 20px rgba(30, 30, 30, 0.4);
 }
 
 .book {
-    /* background-color: var(--dark-brown); */
     color: white;
     padding: 15px 10px;
     box-shadow: 8px 5px 10px rgba(30, 30, 30, 0.4);
     border-radius: 5px;
-    border-right: 7px solid rgb(200, 200, 200);
+    /* background-color: var(--dark-brown); */
+    /* border-left: 8px solid hsl(from var(--dark-brown) h s calc(l - 10)); */
     border-bottom: 3px solid rgb(220, 220, 220);
-    /* border-left: 6px solid hsl(from var(--dark-brown) h s calc(l - 10)); */
     overflow: auto;
 
     display: flex;
@@ -59,11 +89,11 @@ body {
 }
 
 .author, .pages, .read-status {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 .title {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -135,6 +165,10 @@ dialog {
 dialog::backdrop {
     background-color: black;
     opacity: 0.7;
+}
+
+dialog * {
+    font-family: Verdana, Tahoma, sans-serif;
 }
 
 .dialog-area {
