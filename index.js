@@ -19,10 +19,11 @@ function addBookToLibrary(title, author, pages, status, libraryArr) {
     return book
 }
 
+// random color for book background
 function getRandomColor() {
-    const r = Math.floor(Math.random() * 111);       // 0 to 110
-    const g = Math.floor(Math.random() * 111);
-    const b = Math.floor(Math.random() * 111);
+    const r = 30 + Math.floor(Math.random() * 91);       // 30 to 120
+    const g = 30 + Math.floor(Math.random() * 91);
+    const b = 30 + Math.floor(Math.random() * 91);
     return `rgb(${r}, ${g}, ${b})`;
 }
 
@@ -122,7 +123,7 @@ function displayBook(book) {
 }
 
 function displayLibrary(libraryArr) {
-    // for each book, create a card in library container
+    // for each book, create a display in library container
     for (let i = 0; i < libraryArr.length; i++) {
         displayBook(libraryArr[i]);
     }
@@ -142,11 +143,13 @@ const authorInput = document.querySelector("#author-input");
 const pagesInput = document.querySelector("#pages-input");
 const statusInput = document.querySelector("#read-status-input");
 
+// event listeners
 openModalBtn.addEventListener("click", () => modal.showModal());
 
 closeModalBtn.addEventListener("click", () => modal.close());
 
-// clicking outside modal should closes it as well
+// clicking outside modal should closes it as well,
+// stop event bubbling when clicking inside modalArea
 modal.addEventListener("click", () => modal.close());
 modalArea.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -170,6 +173,7 @@ formAddBtn.addEventListener("click", (e) => {
     }
 });
 
+// test books
 addBookToLibrary("Title 1", "Author 1", 150, "Unfinished", myLibrary);
 addBookToLibrary("Title 2", "Author 2", 360, "Unfinished", myLibrary);
 addBookToLibrary("Title 3", "Author 3", 120, "Finished", myLibrary);
@@ -179,4 +183,5 @@ addBookToLibrary("Title 6", "Author 6", 230, "Finished", myLibrary);
 addBookToLibrary("Title 7", "Author 7", 520, "Unfinished", myLibrary);
 addBookToLibrary("Title 8", "Author 8", 15, "Unfinished", myLibrary);
 addBookToLibrary("Title 9", "Author 9", 501, "Finished", myLibrary);
+
 displayLibrary(myLibrary);
