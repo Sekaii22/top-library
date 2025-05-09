@@ -14,7 +14,7 @@
 
 body {
     background-color: var(--beige);
-    padding: 20px;
+    padding: 20px 100px;
 }
 
 #library-container {
@@ -58,4 +58,9 @@ dialog {
 dialog::backdrop {
     filter: blur(3px);
     opacity: 0.8;
+}
+
+.add-btn {
+    background-color: transparent;
+    border: none;
 }
