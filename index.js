@@ -1,17 +1,31 @@
 const myLibrary = [];
 const libraryContainer = document.querySelector("#library-container");
 
-function Book(title, author, pages, status) {
-    this.id = crypto.randomUUID();
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.status = status;
-}
+// function Book(title, author, pages, status) {
+//     this.id = crypto.randomUUID();
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.status = status;
+// }
 
-Book.prototype.toggleReadStatus = function() {
-    this.status = (this.status === "Unfinished") ? "Finished" : "Unfinished";
-};
+// Book.prototype.toggleReadStatus = function() {
+//     this.status = (this.status === "Unfinished") ? "Finished" : "Unfinished";
+// };
+
+class Book {
+    constructor(title, author, pages, status) {
+        this.id = crypto.randomUUID();
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.status = status;
+    }
+
+    toggleReadStatus() {
+        this.status = (this.status === "Unfinished") ? "Finished" : "Unfinished";
+    }
+}
 
 function addBookToLibrary(title, author, pages, status, libraryArr) {
     let book = new Book(title, author, pages, status);
