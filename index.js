@@ -11,7 +11,7 @@ function Book(title, author, pages, status) {
 
 Book.prototype.toggleReadStatus = function() {
     this.status = (this.status === "Unfinished") ? "Finished" : "Unfinished";
-}
+};
 
 function addBookToLibrary(title, author, pages, status, libraryArr) {
     let book = new Book(title, author, pages, status);
