@@ -9,6 +9,10 @@ function Book(title, author, pages, status) {
     this.status = status;
 }
 
+Book.prototype.toggleReadStatus = function() {
+    this.status = (this.status === "Unfinished") ? "Finished" : "Unfinished";
+}
+
 function addBookToLibrary(title, author, pages, status, libraryArr) {
     let book = new Book(title, author, pages, status);
 
@@ -103,7 +107,7 @@ function displayBook(book) {
 
     toggleStatusBtn.addEventListener("click", () => {
         // change in arr
-        book.status = (book.status === "Unfinished") ? "Finished" : "Unfinished";
+        book.toggleReadStatus();
         console.log(myLibrary);
         
         // change in display
